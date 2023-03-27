@@ -18,7 +18,7 @@ STUDENTS = [
   {
     'id' : 3,
     'name' : 'Student 3',
-    'department' : 'ai&ds',
+    'department' : 'aids',
     'year' : 1
   },
   {
