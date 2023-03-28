@@ -12,7 +12,7 @@
     {% include 'navbar.html' %}
     <div class="container">
       <h1 class="text-center">RMK Forms</h1>
-      <img src="https://webproject.ganesshm.repl.co/static/banner.jpg" height="480px"><br><br>
+      <img src="/static/banner.jpg" height="480px"><br><br>
       <h1>What is Lorem Ipsum?</h1>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
     
@@ -21,11 +21,9 @@
       </p>
       <div>
         {% for student in students %}
-            <div style="margin-bottom:18px;"> 
+            <div> 
               <h4 style="color:rgb(115,115,115);">Name: {{student['student_name']}}</h4>
-              <div><b>Registration Number: {{student['reg_no']}}</b></div>
-              <div><b>Image:</b> <img src="{{student['image']}}" alt="student {{student['id']}} " > </div>
-            </div>
+              <div style="margin-bottom:18px;"><b>Registration Number: {{student['reg_no']}}</b></div>
         {% endfor %}
       </div>
     </div>
