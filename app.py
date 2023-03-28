@@ -1,37 +1,13 @@
 from flask import Flask, render_template, jsonify, request
+from database import load_students_from_db
 
 app = Flask(__name__)
 
-STUDENTS = [
-  {
-    'id' : 1,
-    'name' : 'Student 1',
-    'department' : 'cse',
-    'year' : 2
-  },
-  {
-    'id' : 2,
-    'name' : 'Student  2',
-    'department' : 'ece',
-    'year' : 3
-  },
-  {
-    'id' : 3,
-    'name' : 'Student 3',
-    'department' : 'aids',
-    'year' : 1
-  },
-  {
-    'id' : 4,
-    'name' : 'Student 4',
-    'department' : 'cyber',
-    'year' : 4
-  }
-]
 
 @app.route("/")
 def hello():
-  return render_template('home.html')
+  students = load_students_from_db()
+  return render_template('home.html', students=students)
 
 
 @app.route("/api/students")
