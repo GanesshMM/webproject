@@ -13,5 +13,10 @@ def student_list():
   students = load_students_from_db()
   return jsonify(students)
 
+@app.route("/student/<id>")
+def show_student(id):
+  student = load_students_from_db(id)
+  return jsonify(student)
+
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)

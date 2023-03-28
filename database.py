@@ -13,7 +13,6 @@ with engine.connect() as con:
   result = con.execute(text("select * from students"))
   
   columns = result.keys()
-  print("Columns:", columns)
   
   result_dicts = []
   for row in result.all():
@@ -29,7 +28,6 @@ def load_students_from_db():
     result = con.execute(text("select * from students"))
     
     columns = result.keys()
-    print("Columns:", columns)
     
     students = []
     for row in result.all():
@@ -38,3 +36,16 @@ def load_students_from_db():
         values[column] = value
       students.append(values)
     return students
+
+def load_job_from_db(id):
+  with engine.connect() as conn:
+    result = conn.execute(
+       text(f"SELECT * FROM jobs WHERE id={id}")
+      )
+    rows = []
+    for row in result.all():
+      rows.append(row._mapping)
+    if len(rows) == 0:
+      return None
+    else:
+      return row
