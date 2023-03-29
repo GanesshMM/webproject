@@ -37,15 +37,12 @@ def load_students_from_db():
       students.append(values)
     return students
 
-def load_job_from_db(id):
+def load_student_from_db(id):
   with engine.connect() as conn:
-    result = conn.execute(
-       text(f"SELECT * FROM jobs WHERE id={id}")
-      )
-    rows = []
-    for row in result.all():
-      rows.append(row._mapping)
-    if len(rows) == 0:
+    result = conn.execute(text(f"SELECT * FROM students WHERE id={id}"))
+    row = result.fetchone()
+    if row is None:
       return None
     else:
-      return row
+      return dict(row._asdict())
+
