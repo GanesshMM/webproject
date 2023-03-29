@@ -18,10 +18,13 @@
       <p>{{student.email}}</p>
       <h3 class="mb-1">Phone Number:</h3>
       <p>{{student.phone_no}}</p>
+      <h3 class="mb-1">Address:</h3>
+      <p>{{student.address}}</p>
       <h3 class="mb-1">Leaving Date and Time:</h3>
       <p>{{student.leaving_date}}</p>
       <h3 class="mb-1">Arriving Date and Time:</h3>
       <p>{{student.arriving_date}}</p>
+      {% include 'outing_form.html' %}
     </div>
     
     {% include 'footer.html' %}

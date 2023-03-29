@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Outing Form Submitted</title>
+    {% include 'bootstrap.html' %}
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    <div class="container">
+      <h1 class="text-center">RMK Forms</h1> 
+      <h2 class="text-center">Submitted Data</h2> <br>
+      <h4 class="mb-1">Student Name:</h4>
+      <div class="mb-3">{{outing['student_name']}}</div>
+  
+      <h4 class="mb-1">Registration Number:</h4>
+      <div class="mb-3">{{outing['reg_no']}}</div>
+  
+      <h4 class="mb-1">Email ID:</h4>
+      <div class="mb-3">{{outing['email']}}</div>
+  
+      <h4 class="mb-1">Phone Number:</h4>
+      <div class="mb-3">{{outing['phone_no']}}</div>
+  
+      <h4 class="mb-1">Department:</h4>
+      <div class="mb-3">{{outing['department']}}</div>
+  
+      <h4 class="mb-1">Address:</h4>
+      <div class="mb-3">{{outing['address']}}</div>
+  
+      <h4 class="mb-1">Date of Leaving:</h4>
+      <div class="mb-3">{{outing['leaving_date']}}</div>
+  
+      <h4 class="mb-1">Date of Arriving:</h4>
+      <div class="mb-3">{{outing['arriving_date']}}</div>
+    
+    {% include 'footer.html' %}
+  </body>
+</html>

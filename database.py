@@ -46,3 +46,18 @@ def load_student_from_db(id):
     else:
       return dict(row._asdict())
 
+def add_data_to_db(id, data):
+  with engine.connect() as conn:
+    query = conn.execute(text(f"INSERT INTO datasubmitted (student_name, reg_no, department, email, phone_no, address, leaving_date, arriving_date) VALUES ({student_name}, {reg_no}, {department}, {email}, {phone_no}, {address}, {leaving_date}, {arriving_date})"))
+
+    conn.execute(query, 
+                 id=id, 
+                 student_name=data['student_name'],
+                 reg_no=data['reg_no'],
+                 department=data['department'],
+                 email=data['email'],
+                 phone_no=data['phone_no'],
+                 address=data['address'],
+                 leaving_date=data['leaving_date'],
+                 arriving_date=data['arriving_date']
+                )

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from database import load_students_from_db, load_student_from_db
+from database import load_students_from_db, load_student_from_db, add_data_to_db
 
 app = Flask(__name__)
 
@@ -20,6 +20,13 @@ def show_student(id):
     return "Not Found", 404
   return render_template('studentpage.html', 
                          student = student)
+
+@app.route("/student/<id>/apply", methods=['post'])
+def apply_to_student(id):
+  data = request.form
+  add_data_to_db(id, data)
+  return render_template('outing_form_submit.html',
+                         data=data)
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)
