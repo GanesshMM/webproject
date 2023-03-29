@@ -16,7 +16,10 @@ def student_list():
 @app.route("/student/<id>")
 def show_student(id):
   student = load_student_from_db(id)
-  return jsonify(student)
+  if not student:
+    return "Not Found", 404
+  return render_template('studentpage.html', 
+                         student = student)
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)

@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+ <html>
+  <head>
+    <title>{{student.student_name}} Details</title>
+    {% include 'bootstrap.html' %}
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    <div class="container">
+      <h1 class="text-center">RMK Forms</h1> <br>
+      <h3 class="mb-1">Name:</h3>
+      <p>{{student.student_name}}</p>
+      <h3 class="mb-1">Registration Number:</h3>
+      <p>{{student.reg_no}}</p>
+      <h3 class="mb-1">Department:</h3>
+      <p>{{student.department}}</p>
+      <h3 class="mb-1">Email ID:</h3>
+      <p>{{student.email}}</p>
+      <h3 class="mb-1">Phone Number:</h3>
+      <p>{{student.phone_no}}</p>
+      <h3 class="mb-1">Leaving Date and Time:</h3>
+      <p>{{student.leaving_date}}</p>
+      <h3 class="mb-1">Arriving Date and Time:</h3>
+      <p>{{student.arriving_date}}</p>
+    </div>
+    
+    {% include 'footer.html' %}
+  </body>
+ </html>
